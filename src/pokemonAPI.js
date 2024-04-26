@@ -20,8 +20,8 @@ async function getPokemonData(){
 }
 
 async function putDataOnPage(dataToDisplay){
-    document.querySelector(".pokemonImage").textContent = dataToDisplay.name;
-    // document.querySelector(".pokemonName").textContent = dataToDisplay.name;
+    document.querySelector(".pokemonName").textContent = dataToDisplay.name;
+    // document.querySelector(".pokemonImage").textContent = dataToDisplay.name;
     // document.querySelector(".pokemonType1").textContent = dataToDisplay.name;
     // document.querySelector(".pokemonType2").textContent = dataToDisplay.name;
 }
