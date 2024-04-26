@@ -21,9 +21,16 @@ async function getPokemonData(){
 
 async function putDataOnPage(dataToDisplay){
     document.querySelector(".pokemonName").textContent = dataToDisplay.name;
-    // document.querySelector(".pokemonImage").textContent = dataToDisplay.name;
-    // document.querySelector(".pokemonType1").textContent = dataToDisplay.name;
-    // document.querySelector(".pokemonType2").textContent = dataToDisplay.name;
+
+    let type1Display = document.querySelector(".pokemonType1");
+    let type2Display = document.querySelector(".pokemonType2");
+
+    type1Display.textContent = dataToDisplay.types[0].type.name;
+
+    if (dataToDisplay.types[1]){
+        // If second element exists, set second type display
+        type2Display.textContent = dataToDisplay.types[1].type.name;
+    }
 }
 
 
