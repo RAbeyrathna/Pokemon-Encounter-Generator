@@ -31,6 +31,9 @@ async function putDataOnPage(dataToDisplay){
         // If second element exists, set second type display
         type2Display.textContent = dataToDisplay.types[1].type.name;
     }
+    else{
+        type2Display.textContent = "";
+    }
 }
 
 
