@@ -40,13 +40,25 @@ async function putDataOnPage(dataToDisplay){
     let shinyResult = Math.floor(Math.random() * 4) + 1;
 
     if (shinyResult == 1){
-        imageElement.src = dataToDisplay.sprites.front_shiny;
+        imageElement.src = dataToDisplay.sprites.front_shiny;[]
         console.log("SHINY!")
     }
     else {
         imageElement.src = dataToDisplay.sprites.front_default;
     }
 
+
+    let cryURL = dataToDisplay.cries.latest;
+    let pokemonAudioElement = document.querySelector(".pokemonCry audio")
+
+    pokemonAudioElement.src = cryURL;
+
+    let pokemonAudioPlayButton = document.querySelector(".pokemonCry");
+
+    pokemonAudioPlayButton.addEventListener("click", () => {
+        pokemonAudioElement.volume = 0.1;
+        pokemonAudioElement.play();
+    })
 }
 
 
