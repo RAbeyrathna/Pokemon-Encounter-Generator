@@ -70,4 +70,27 @@ async function getAndDisplayPokemonData(){
 }
 
 
+async function generateTeamData(){
+    let teamArray = [];
+
+    for (let index = 0; index < 6; index++) {
+        let data = await getPokemonData();
+        teamArray.push(data);
+    }
+
+    return teamArray;
+}
+
+async function showTeamData(){
+
+}
+
+async function getAndShowTeamData(){
+    let teamData = await generateTeamData();
+    showTeamData(teamData);
+    console.log(teamData)
+}
+
+document.getElementById("create-team").addEventListener("click", getAndShowTeamData);
+
 document.querySelector("#create-encounter").addEventListener("click", getAndDisplayPokemonData);
