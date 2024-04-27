@@ -71,14 +71,23 @@ async function getAndDisplayPokemonData(){
 
 
 async function generateTeamData(){
-    let teamArray = [];
+    // let teamArray = [];
 
-    for (let index = 0; index < 6; index++) {
-        let data = await getPokemonData();
-        teamArray.push(data);
-    }
+    // for (let index = 0; index < 6; index++) {
+    //     let data = await getPokemonData();
+    //     teamArray.push(data);
+    // }
 
-    return teamArray;
+    let promiseAllResult = await Promise.all([
+        getPokemonData(),
+        getPokemonData(),
+        getPokemonData(),
+        getPokemonData(),
+        getPokemonData(),
+        getPokemonData()
+    ]);
+
+    return promiseAllResult;
 }
 
 async function showTeamData(){
