@@ -12,3 +12,8 @@
     - [ ] Select size of team
   - [ ] Show 2D artwork if 3D model does not exist
 - Styling
+  - [ ] Add background image and colours
+  - [ ] Add nicer fonts
+- Other
+  - [ ] Refactor code to be DRY
+  - [ ] Add comments to code
