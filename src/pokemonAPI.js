@@ -40,11 +40,11 @@ async function putDataOnPage(dataToDisplay){
     let shinyResult = Math.floor(Math.random() * 4) + 1;
 
     if (shinyResult == 1){
-        imageElement.src = dataToDisplay.sprites.front_shiny;[]
+        imageElement.src = dataToDisplay.sprites.other.showdown.front_shiny;
         console.log("SHINY!")
     }
     else {
-        imageElement.src = dataToDisplay.sprites.front_default;
+        imageElement.src = dataToDisplay.sprites.other.showdown.front_default;
     }
 
 
