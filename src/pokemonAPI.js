@@ -34,6 +34,11 @@ async function putDataOnPage(dataToDisplay){
     else{
         type2Display.textContent = "";
     }
+
+    let imageElement = document.querySelector(".pokemonImage img")
+
+    imageElement.src = dataToDisplay.sprites.front_default;
+
 }
 
 
