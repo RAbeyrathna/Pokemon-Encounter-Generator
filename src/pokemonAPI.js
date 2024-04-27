@@ -121,8 +121,20 @@ async function showTeamData(teamToDisplay){
         newPokemonCard.appendChild(type2Display);
 
         // Add Pokemon Cry button
+        let cryURL = pokemon.cries.latest;
+        let pokemonAudioElement = document.createElement("audio");
+        pokemonAudioElement.src = cryURL;
+        
+        let pokemonAudioPlayButton = document.createElement("button");
 
+        pokemonAudioPlayButton.textContent = "Play Sound";
+        pokemonAudioPlayButton.addEventListener("click", () => {
+            pokemonAudioElement.volume = 0.1;
+            pokemonAudioElement.play();
+        });
 
+        pokemonAudioPlayButton.appendChild(pokemonAudioElement);
+        newPokemonCard.appendChild(pokemonAudioPlayButton);
 
         // Add Pokemon image and shiny chance
 
