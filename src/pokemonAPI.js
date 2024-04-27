@@ -37,7 +37,8 @@ async function putDataOnPage(dataToDisplay){
 
     let imageElement = document.querySelector(".pokemonImage img")
 
-    let shinyResult = Math.floor(Math.random() * 4) + 1;
+    let oddsUpperLimit = 4;
+    let shinyResult = Math.floor(Math.random() * oddsUpperLimit) + 1;
 
     if (shinyResult == 1){
         imageElement.src = dataToDisplay.sprites.other.showdown.front_shiny;
@@ -103,6 +104,25 @@ async function showTeamData(teamToDisplay){
 
         newPokemonCard.appendChild(pokemonNameTitle);
 
+        // Add Pokemon image and shiny chance
+        let imageContainer = document.createElement("div")
+        let imageElement = document.createElement("img")
+
+        imageContainer.appendChild(imageElement)
+
+        let oddsUpperLimit = 4;
+        let shinyResult = Math.floor(Math.random() * oddsUpperLimit) + 1;
+
+        if (shinyResult == 1){
+            imageElement.src = pokemon.sprites.other.showdown.front_shiny;
+            console.log("SHINY!")
+        }
+        else {
+            imageElement.src = pokemon.sprites.other.showdown.front_default;
+        }
+
+        newPokemonCard.appendChild(imageContainer);
+
         // Add Pokemon Type(s)
         let type1Display = document.createElement("div");
         let type2Display = document.createElement("div");
@@ -124,7 +144,7 @@ async function showTeamData(teamToDisplay){
         let cryURL = pokemon.cries.latest;
         let pokemonAudioElement = document.createElement("audio");
         pokemonAudioElement.src = cryURL;
-        
+
         let pokemonAudioPlayButton = document.createElement("button");
 
         pokemonAudioPlayButton.textContent = "Play Sound";
@@ -136,9 +156,7 @@ async function showTeamData(teamToDisplay){
         pokemonAudioPlayButton.appendChild(pokemonAudioElement);
         newPokemonCard.appendChild(pokemonAudioPlayButton);
 
-        // Add Pokemon image and shiny chance
-
-
+        
 
         // Apply content to page
 
