@@ -32,7 +32,7 @@ async function putDataOnPage(dataToDisplay){
         type2Display.textContent = "Type 2: " + dataToDisplay.types[1].type.name;
     }
     else{
-        type2Display.textContent = "";
+        type2Display.textContent = "Type 2: ";
     }
 
     let imageElement = document.querySelector(".pokemonImage img")
@@ -97,10 +97,39 @@ async function showTeamData(teamToDisplay){
     teamToDisplay.forEach(pokemon => {
         let newPokemonCard = document.createElement("div");
 
+        // Add Pokemon Name
         let pokemonNameTitle = document.createElement("h3");
         pokemonNameTitle.textContent = pokemon.name;
 
         newPokemonCard.appendChild(pokemonNameTitle);
+
+        // Add Pokemon Type(s)
+        let type1Display = document.createElement("div");
+        let type2Display = document.createElement("div");
+
+        type1Display.textContent = "Type 1: " + pokemon.types[0].type.name;
+
+        if (pokemon.types[1]){
+        // If second element exists, set second type display
+            type2Display.textContent = "Type 2: " + pokemon.types[1].type.name;
+        }
+        else{
+            type2Display.textContent = "Type 2: ";
+        }
+
+        newPokemonCard.appendChild(type1Display);
+        newPokemonCard.appendChild(type2Display);
+
+        // Add Pokemon Cry button
+
+
+
+        // Add Pokemon image and shiny chance
+
+
+
+        // Apply content to page
+
 
         teamDisplaySection.appendChild(newPokemonCard);
     });
