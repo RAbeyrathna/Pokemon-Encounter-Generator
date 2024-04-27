@@ -43,13 +43,9 @@ async function putDataOnPage(dataToDisplay){
         imageElement.src = dataToDisplay.sprites.front_shiny;
         console.log("SHINY!")
     }
-    else{
+    else {
         imageElement.src = dataToDisplay.sprites.front_default;
     }
-
-    
-
-    imageElement.src = dataToDisplay.sprites.front_default;
 
 }
 
