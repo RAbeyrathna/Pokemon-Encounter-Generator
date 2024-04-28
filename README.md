@@ -4,6 +4,8 @@ This project is simple webpage that utilises the PokeAPI to display information 
 
 Users are also able to generate either a single Pokémon or a team of Pokémon.
 
+Take a look at the live site [here](https://rabeyrathna.com/Pokemon-Encounter-Generator/)
+
 ## Features
 
 - Display Pokémon information including:
@@ -17,12 +19,12 @@ Users are also able to generate either a single Pokémon or a team of Pokémon.
 
 - HTML
 - JavaScript
-- PokeAPI (https://pokeapi.co/)
+- [PokeAPI](https://pokeapi.co/)
 
 ## To Do
 
 - Functionality
-  - [x] PokePokémonmon cries
+  - [x] Pokémon cries
   - [ ] Capitalise Pokémon names
   - [x] Chance of Pokémon to be shiny
     - [ ] Sound effect for shiny encounter
