@@ -9,12 +9,6 @@ async function getPokemonData(){
     let responseData = await response.json();
     let result = responseData;
 
-    // let promiseResponse = await fetch(fullApiUrl).then(response => {
-    //     return response.json();
-    // })
-
-    // result = promiseResponse;
-
     return result;
 
 }
@@ -72,12 +66,6 @@ async function getAndDisplayPokemonData(){
 
 
 async function generateTeamData(){
-    // let teamArray = [];
-
-    // for (let index = 0; index < 6; index++) {
-    //     let data = await getPokemonData();
-    //     teamArray.push(data);
-    // }
 
     let promiseAllResult = await Promise.all([
         getPokemonData(),
