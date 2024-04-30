@@ -1,4 +1,15 @@
 
+const spriteURLs = {
+    "2D": {
+        normal: "sprites.front_default",
+        shiny: "sprites.front_shiny"
+    },
+    "3D": {
+        normal: "sprites.other.showdown.front_default",
+        shiny: "sprites.other.showdown.front_shiny"
+    }
+}
+
 async function getPokemonData(){
     let pokemonApiUrlBase = "https://pokeapi.co/api/v2/pokemon/" ;
     let pokemonID = Math.floor(Math.random() * 1025) + 1;
@@ -35,11 +46,11 @@ async function putDataOnPage(dataToDisplay){
     let shinyResult = Math.floor(Math.random() * oddsUpperLimit) + 1;
 
     if (shinyResult == 1){
-        imageElement.src = dataToDisplay.sprites.other.showdown.front_shiny;
+        imageElement.src = dataToDisplay.sprites.front_shiny;
         console.log("SHINY!")
     }
     else {
-        imageElement.src = dataToDisplay.sprites.other.showdown.front_default;
+        imageElement.src = dataToDisplay.sprites.front_default;
     }
 
 
@@ -102,11 +113,11 @@ async function showTeamData(teamToDisplay){
         let shinyResult = Math.floor(Math.random() * oddsUpperLimit) + 1;
 
         if (shinyResult == 1){
-            imageElement.src = pokemon.sprites.other.showdown.front_shiny;
+            imageElement.src = pokemon.sprites.front_shiny;
             console.log("SHINY!")
         }
         else {
-            imageElement.src = pokemon.sprites.other.showdown.front_default;
+            imageElement.src = pokemon.sprites.front_default;
         }
 
         newPokemonCard.appendChild(imageContainer);
@@ -157,6 +168,10 @@ async function getAndShowTeamData(){
     let teamData = await generateTeamData();
     showTeamData(teamData);
     console.log(teamData)
+}   
+
+function toggleSprite() {
+    
 }
 
 document.getElementById("create-team").addEventListener("click", getAndShowTeamData);
