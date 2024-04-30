@@ -32,6 +32,8 @@ Take a look at the live site [here](https://rabeyrathna.com/Pokemon-Encounter-Ge
   - [ ] Party generator
     - [ ] Select size of team
   - [ ] Show 2D artwork if 3D model does not exist
+    - [ ] Button to switch between 2D and 3D sprites
+      - [ ] Live reload current sprites if button is clicked
 - Styling
   - [ ] Add background image and colours
   - [ ] Add nicer fonts
