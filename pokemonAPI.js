@@ -1,14 +1,14 @@
 
-const spriteURLs = {
-    "2D": {
-        normal: "sprites.front_default",
-        shiny: "sprites.front_shiny"
-    },
-    "3D": {
-        normal: "sprites.other.showdown.front_default",
-        shiny: "sprites.other.showdown.front_shiny"
-    }
-}
+// const spriteURLs = {
+//     "2D": {
+//         normal: "sprites.front_default",
+//         shiny: "sprites.front_shiny"
+//     },
+//     "3D": {
+//         normal: "sprites.other.showdown.front_default",
+//         shiny: "sprites.other.showdown.front_shiny"
+//     }
+// }
 
 let currentSpriteType = "2D";
 let spriteToggleButton = document.querySelector("#sprite-button");
@@ -61,11 +61,21 @@ async function putDataOnPage(dataToDisplay){
     let shinyResult = Math.floor(Math.random() * oddsUpperLimit) + 1;
 
     if (shinyResult == 1){
-        imageElement.src = dataToDisplay.sprites.front_shiny;
+        if(currentSpriteType == "2D"){
+            imageElement.src = dataToDisplay.sprites.front_shiny;
+        }
+        else{
+            imageElement.src = dataToDisplay.sprites.other.showdown.front_shiny;
+        }
         console.log("SHINY!")
     }
     else {
-        imageElement.src = dataToDisplay.sprites.front_default;
+        if(currentSpriteType == "2D"){
+            imageElement.src = dataToDisplay.sprites.front_default;
+        }
+        else{
+            imageElement.src = dataToDisplay.sprites.other.showdown.front_default;
+        }
     }
 
 
