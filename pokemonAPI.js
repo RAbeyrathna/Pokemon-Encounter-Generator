@@ -21,6 +21,7 @@ function toggleSpriteType(){
 		currentSpriteType = "2D";
         spriteToggleButton.textContent = "Switch to 3D Sprites"
 	}
+
 }
 
 spriteToggleButton.addEventListener("click", toggleSpriteType);
@@ -138,11 +139,21 @@ async function showTeamData(teamToDisplay){
         let shinyResult = Math.floor(Math.random() * oddsUpperLimit) + 1;
 
         if (shinyResult == 1){
-            imageElement.src = pokemon.sprites.front_shiny;
+            if(currentSpriteType == "2D"){
+                imageElement.src = pokemon.sprites.front_shiny;
+            }
+            else{
+                imageElement.src = pokemon.sprites.other.showdown.front_shiny;
+            }
             console.log("SHINY!")
         }
         else {
-            imageElement.src = pokemon.sprites.front_default;
+            if(currentSpriteType == "2D"){
+                imageElement.src = pokemon.sprites.front_default;
+            }
+            else{
+                imageElement.src = pokemon.sprites.other.showdown.front_default;
+            }
         }
 
         newPokemonCard.appendChild(imageContainer);
