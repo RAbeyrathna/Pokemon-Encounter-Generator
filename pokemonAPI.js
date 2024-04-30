@@ -10,6 +10,21 @@ const spriteURLs = {
     }
 }
 
+let currentSpriteType = "2D";
+let spriteToggleButton = document.querySelector("#sprite-button");
+
+function toggleSpriteType(){
+	if (currentSpriteType == "2D"){
+		currentSpriteType = "3D";
+        spriteToggleButton.textContent = "Switch to 2D Sprites"
+	} else {
+		currentSpriteType = "2D";
+        spriteToggleButton.textContent = "Switch to 3D Sprites"
+	}
+}
+
+spriteToggleButton.addEventListener("click", toggleSpriteType);
+
 async function getPokemonData(){
     let pokemonApiUrlBase = "https://pokeapi.co/api/v2/pokemon/" ;
     let pokemonID = Math.floor(Math.random() * 1025) + 1;
